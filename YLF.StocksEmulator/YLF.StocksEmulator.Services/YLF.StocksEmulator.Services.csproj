@@ -5,8 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0" />
-    <PackageReference Include="System.Net.Http.Json" Version="6.0.0" />
+    <ProjectReference Include="..\YLF.StocksEmulator.Repository\YLF.StocksEmulator.Repository.csproj" />
   </ItemGroup>
 
 </Project>

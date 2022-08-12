@@ -12,4 +12,8 @@
     <PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\YLF.StocksEmulator.Services\YLF.StocksEmulator.Services.csproj" />
+  </ItemGroup>
+
 </Project>
