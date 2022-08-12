@@ -6,7 +6,13 @@ namespace YLF.StocksEmulator.Repository.Stocks
 { 
     public class Stock
     {
+        public Stock(string name)
+        {
+            Name = name;
+        }
+
         public string Name { get; private set; }
+
        
     }
 }

@@ -7,7 +7,7 @@ namespace YLF.StocksEmulator.Repository.Stocks
 {
     public interface ICurrentStockRepository
     {
-        Task<CurrentStock> GetStock(string stockName);
-        Task<List<CurrentStock>> GetAllStocks();
+        Task<CurrentStock> GetStockAsync(string stockName);
+        Task<List<CurrentStock>> GetAllStocksAsync();
     }
 }

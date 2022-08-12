@@ -9,6 +9,8 @@ using System.Text;
 using Microsoft.Extensions.Http;
 using Microsoft.Extensions.DependencyInjection;
 using System.Net.Http;
+using YLF.StocksEmulator.Services;
+using YLF.StocksEmulator.Repository.Stocks;
 
 namespace YLF.StocksEmulator.Terminal
 {
@@ -25,8 +27,9 @@ namespace YLF.StocksEmulator.Terminal
                 })
                 .ConfigureServices((context, services) =>
                 {
-                    services.AddHttpClient(Constants.HttpClientName, congfigClient=>congfigClient.BaseAddress=new Uri("https://localhost:5001/"));
-                    //add your service registrations
+                    services.AddHttpClient(CurrentStockRepository.HttpClientName, congfigClient=>congfigClient.BaseAddress=new Uri("https://localhost:5001/"));
+                    services.AddSingleton<IUserService, UserService>();
+                   
                 });
 
             return hostBuilder;

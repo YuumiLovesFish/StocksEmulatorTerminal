@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YLF.StocksEmulator.Terminal
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YLF.StocksEmulator.Repository", "YLF.StocksEmulator.Repository\YLF.StocksEmulator.Repository.csproj", "{50501C0C-D584-41F6-81B0-E49D0C1F73EB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YLF.StocksEmulator.Services", "YLF.StocksEmulator.Services\YLF.StocksEmulator.Services.csproj", "{9AB1C828-4380-4DBC-9C57-98273AE44D32}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{50501C0C-D584-41F6-81B0-E49D0C1F73EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50501C0C-D584-41F6-81B0-E49D0C1F73EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50501C0C-D584-41F6-81B0-E49D0C1F73EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AB1C828-4380-4DBC-9C57-98273AE44D32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AB1C828-4380-4DBC-9C57-98273AE44D32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AB1C828-4380-4DBC-9C57-98273AE44D32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AB1C828-4380-4DBC-9C57-98273AE44D32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
