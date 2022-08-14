@@ -9,38 +9,44 @@ namespace YLF.StocksEmulator.Services
     public class UserService : IUserService
     {
         private readonly IUserRepository _userRepo;
-        private User _user;
+        public User User { get; private set; }
 
         public UserService(IUserRepository userRepo)
         {
             _userRepo = userRepo;
         }
 
-        public void ExistAndSaveProgess()
+        public void ExitAndSaveProgess()
         {
-            _userRepo.SaveUserFile(_user);
-        }
+            _userRepo.SaveUserFile(User);
+        } 
 
         public void Login(string userName)
         {
-            if (_userRepo.IfUserExist(userName))
+            if (string.IsNullOrEmpty(userName))
             {
-               _user = _userRepo.GetUser(userName);
+                return;
             }
-            CreateNewUser(userName);
+            if (!_userRepo.IfUserExist(userName))
+            {
+                User = CreateNewUser(userName);
+            }
+            else
+            {
+                User = _userRepo.GetUser(userName);
+            }         
         }
 
         public void TopUpAccount(decimal amount)
-            => _user.AddMoney(amount);
+            => User.AddMoney(amount);
         
 
-        private void CreateNewUser(string userName)
+        private User CreateNewUser(string userName)
         {
             decimal startingBalance = 10000m;
             List<OwnedStock> ownedStocks = new List<OwnedStock>();
             Portfolio portfolio = new Portfolio(startingBalance, ownedStocks);
-            _user = new User(userName, portfolio);
-            
+            return new User(userName, portfolio);
         }
 
     }

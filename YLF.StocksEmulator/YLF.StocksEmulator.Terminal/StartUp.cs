@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Net.Http;
 using YLF.StocksEmulator.Services;
 using YLF.StocksEmulator.Repository.Stocks;
+using YLF.StocksEmulator.Repository.Users;
 
 namespace YLF.StocksEmulator.Terminal
 {
@@ -27,9 +28,11 @@ namespace YLF.StocksEmulator.Terminal
                 })
                 .ConfigureServices((context, services) =>
                 {
-                    services.AddHttpClient(CurrentStockRepository.HttpClientName, congfigClient=>congfigClient.BaseAddress=new Uri("https://localhost:5001/"));
+                    services.AddHttpClient(CurrentStockRepository.HttpClientName, congfigClient=>congfigClient.BaseAddress=new Uri(context.Configuration.GetValue<string>("StockApiUrl")));
                     services.AddSingleton<IUserService, UserService>();
-                   
+                    services.AddScoped<ICurrentStockRepository, CurrentStockRepository>();
+                    services.AddScoped<IUserRepository, UserRepository>();
+                    services.AddScoped<ITradingService, TradingService>();
                 });
 
             return hostBuilder;

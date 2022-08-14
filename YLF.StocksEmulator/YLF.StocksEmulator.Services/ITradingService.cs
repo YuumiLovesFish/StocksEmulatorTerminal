@@ -10,9 +10,9 @@ namespace YLF.StocksEmulator.Services
     public interface ITradingService
     {
 
-       Task BuyStockAsync(User user, string stockName, int quantity);
-       Task SellStcokAsync(User user, string stockName, int quantity);
-       Task<List<CurrentStock>> CheckAllStocks();
+       Task<CurrentStock> BuyStockAsync(User user, string stockName, int quantity);
+       Task<CurrentStock> SellStcokAsync(User user, string stockName, int quantity);
+       Task<List<CurrentStock>> CheckAllStocksAsync();
 
     }
 }
