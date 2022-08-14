@@ -6,9 +6,9 @@ namespace YLF.StocksEmulator.Repository.Stocks
 {
     public class OwnedStock : Stock
     {
-        public OwnedStock(string name, int quantity) :base(name)
+        public OwnedStock(string name, int quantityHold) :base(name)
         {
-            QuantityHold = quantity;
+            QuantityHold = quantityHold;
         }
 
         public int QuantityHold { get; internal set; }

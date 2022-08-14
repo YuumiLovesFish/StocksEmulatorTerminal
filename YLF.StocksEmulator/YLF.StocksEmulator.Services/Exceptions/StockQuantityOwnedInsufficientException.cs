@@ -4,9 +4,9 @@ using System.Text;
 
 namespace YLF.StocksEmulator.Services.Exceptions
 {
-    class StockQuantityOwnedInsufficientException : Exception
+    public class StockQuantityInvalidtException : Exception
     {
-        public StockQuantityOwnedInsufficientException(string message) : base(message)
+        public StockQuantityInvalidtException(string message) : base(message)
         {
         }
     }

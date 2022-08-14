@@ -7,9 +7,9 @@ namespace YLF.StocksEmulator.Services
 {
     public interface IUserService
     {
+        User User { get; }
         void Login(string userName);
-        void ExistAndSaveProgess();
+        void ExitAndSaveProgess();
         void TopUpAccount(decimal amount);
-        
     }
 }

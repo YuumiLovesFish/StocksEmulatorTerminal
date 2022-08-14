@@ -1,8 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
+    <StartupObject>YLF.StocksEmulator.Terminal.Program</StartupObject>
+    <ApplicationIcon />
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,6 +16,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\YLF.StocksEmulator.Services\YLF.StocksEmulator.Services.csproj" />
+    <ProjectReference Include="..\YLF.StocksEmulator.Ui\YLF.StocksEmulator.Ui.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

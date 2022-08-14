@@ -14,18 +14,29 @@ namespace YLF.StocksEmulator.Repository.Users
             MyPortfolio = myPortfolio;
         }
 
+        public override string ToString()
+        {
+            return Name.ToUpper().ToString();
+        }
+
+
         public string Name { get; private set; }
         public Portfolio MyPortfolio { get; private set; }
 
         public void AddMoney(decimal amount)
         {
+            if (amount < 0)
+            {
+                return;
+            }
             this.MyPortfolio.AccountBalance += amount;
 
         }
 
         public void AddStock(string stockName, int quantity)
         {
-
+            if (string.IsNullOrEmpty(stockName)|| quantity < 0)
+                return;
 
             var ownedStock = this.MyPortfolio.MyStocks.SingleOrDefault(s => s.Name == stockName);
             if (ownedStock == null)
@@ -43,6 +54,9 @@ namespace YLF.StocksEmulator.Repository.Users
         }
         public void RemoveStock(string stockName, int quantity)
         {
+            if (string.IsNullOrEmpty(stockName) || quantity < 0)
+                return;
+
             var ownedStock = this.MyPortfolio.MyStocks.SingleOrDefault(s => s.Name == stockName);
             if (ownedStock != null)
             {
